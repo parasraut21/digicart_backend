@@ -243,20 +243,28 @@ app.post('/itempost', async  (req, res) => {
  
 });
 
+require('dotenv').config(); // Load the .env file
+
+// Access environment variables
+const dbHost = process.env.DB_HOST;
+const dbUser = process.env.DB_USER;
+const dbPassword = process.env.DB_PASSWORD;
+const dbName = process.env.DB_NAME;
+
 
 // get food data data 
 const con = mysql.createConnection({
-    host:'localhost',
-    user:'root',
-    password:"root123",
-    database:'digicart'
+    host:dbHost,
+    user:dbUser,
+    password:dbPassword,
+    database:dbName
 })
 
 con.connect((err)=>{
     if(err){
         console.log(err);
     }else{
-        console.log("Database Connected DigiCart !!")
+        console.log("*****************8Database Connected DigiCart successfully********** !!")
     }
 })
 app.get('/getitemdigicart', async (req,res)=>{
