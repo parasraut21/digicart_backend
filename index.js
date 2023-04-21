@@ -372,9 +372,9 @@ await  con.query(`select * from orders where userEmail='${userEmail}'`,function(
       res.send(p);
   })
 })
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8080;
 
   // Start the express app
-app.listen(port, () => {
-    console.log(`Server started on port ${port}`);
-  })
+  app.listen(8080, () => {
+    console.log('Server started on port 8080');
+  });

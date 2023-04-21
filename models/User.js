@@ -18,7 +18,7 @@ const dbName = process.env.DB_NAME;
 //   dialect: 'mysql'
 // });
 const sequelize = new Sequelize(dbName, dbUser, dbPassword, {
-  host: 'localhost',
+  host: dbHost,
   dialect: 'mysql'
 });
 sequelize.authenticate()
